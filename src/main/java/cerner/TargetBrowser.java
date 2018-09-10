@@ -62,7 +62,8 @@ public class TargetBrowser {
 				desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
 				driver=new ChromeDriver(desiredCapabilities);
 			}else {
-				 System.out.println("InsideChosen2"+chosen);
+				System.out.println("BROWSER.CHROME"+BROWSER.CHROME);
+				System.out.println("InsideChosen2"+chosen);
 				System.setProperty("webdriver.chrome.driver",exeLocation);
 				ChromeOptions options = new ChromeOptions();
 				//options.addArguments("load-extension=C:/KeshriKundanAccess/extension/a11yChromeExtn");
