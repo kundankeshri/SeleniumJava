@@ -62,6 +62,8 @@ public class TargetBrowser {
 				desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
 				driver=new ChromeDriver(desiredCapabilities);
 			}else {
+				System.out.println("chosen"+(chosen == BROWSER.CHROME));
+				System.out.println("checkAccessibility"+(checkAccessibility == "ACCESSIBILITY"));
 				System.out.println("BROWSER.CHROME"+BROWSER.CHROME);
 				System.out.println("InsideChosen2"+chosen);
 				System.setProperty("webdriver.chrome.driver",exeLocation);
