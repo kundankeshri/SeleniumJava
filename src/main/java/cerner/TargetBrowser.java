@@ -50,7 +50,7 @@ public class TargetBrowser {
 				//driver = new FirefoxDriver(fprofile);
 				driver = new FirefoxDriver();
 			}
-
+       System.out.println(chosen == BROWSER.CHROME && checkAccessibility == "ACCESSIBILITY");
 		   if(chosen == BROWSER.CHROME && checkAccessibility == "ACCESSIBILITY"){
 				 System.out.println("InsideChosen1"+chosen);
 				System.setProperty("webdriver.chrome.driver",exeLocation);
