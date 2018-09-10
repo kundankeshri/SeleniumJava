@@ -10,15 +10,15 @@ public class SimpleTest {
 	public void test1() throws Exception {
 
 		TargetBrowser browser = new TargetBrowser();
-		
+
 		String accessibility = System.getenv("ACCESSIBILITY");
-		//System.out.println(accessibility);
+		System.out.println(accessibility);
 		String browse = "CHROME";
 		String exeLocation = "C:\\AxeProjectImpl(03082017)\\browser\\chromedriver.exe";
 
 		WebDriver webDriver = browser.toUse(TargetBrowser.BROWSER.valueOf(browse),accessibility)
 				.webDriverWithExeAt(exeLocation);
-		
+
         webDriver.get("https://localhost:3005");
         Thread.sleep(5000);
         webDriver.findElement(By.xpath("//*[@id='holder']/div[2]/form/div[2]/input")).clear();
@@ -30,6 +30,6 @@ public class SimpleTest {
         Thread.sleep(5000);
         webDriver.findElement(By.xpath("//*[@id='menu']/li[5]/button")).click();
         Thread.sleep(5000);
-              
+
 	}
 }
