@@ -1,6 +1,4 @@
 package com.cerner.cto.test;
-import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
-
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,13 +11,12 @@ public class SimpleTest {
 
 		TargetBrowser browser = new TargetBrowser();
 		
-		String javaHome = System.getenv("JAVA_HOME");
-		System.out.println(javaHome);
+		String accessibility = System.getenv("ACCESSIBILITY");
+		//System.out.println(accessibility);
 		String browse = "CHROME";
-
 		String exeLocation = "C:\\AxeProjectImpl(03082017)\\browser\\chromedriver.exe";
 
-		WebDriver webDriver = browser.toUse(TargetBrowser.BROWSER.valueOf(browse))
+		WebDriver webDriver = browser.toUse(TargetBrowser.BROWSER.valueOf(browse),accessibility)
 				.webDriverWithExeAt(exeLocation);
 		
         webDriver.get("https://localhost:3005");
@@ -33,8 +30,6 @@ public class SimpleTest {
         Thread.sleep(5000);
         webDriver.findElement(By.xpath("//*[@id='menu']/li[5]/button")).click();
         Thread.sleep(5000);
-        webDriver.findElement(By.xpath("//*[@id='horns']")).click();
-        Thread.sleep(5000);
-        
+              
 	}
 }

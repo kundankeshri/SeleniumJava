@@ -12,15 +12,17 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-
 public class TargetBrowser {
 	public static enum BROWSER{FIREFOX,CHROME,IEXPLORER,SAFARI};
 	private BROWSER chosen;
+	private String checkAccessibility;
 	protected EventFiringWebDriver eventFiringDriverForA11y;
 	protected A11YCapableWebDriverEventListener a11yListerner;
+	
 
-	public TargetBrowser toUse(BROWSER browser){
+	public TargetBrowser toUse(BROWSER browser , String accessibility){
 		chosen = browser;
+		checkAccessibility = accessibility ;
 		return this;
 	}
 
@@ -44,10 +46,19 @@ public class TargetBrowser {
 				//driver = new FirefoxDriver(fprofile);
 				driver = new FirefoxDriver();
 			}
-			if(chosen == BROWSER.CHROME){
+		   if(chosen == BROWSER.CHROME && checkAccessibility == "ACCESSIBILITY"){
 				System.setProperty("webdriver.chrome.driver",exeLocation);
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("load-extension=C:/KeshriKundanAccess/extension/a11yChromeExtn");
+				options.addArguments("--start-maximized");
+				DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
+				desiredCapabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+				desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+				driver=new ChromeDriver(desiredCapabilities);
+			}else {
+				System.setProperty("webdriver.chrome.driver",exeLocation);
+				ChromeOptions options = new ChromeOptions();
+				//options.addArguments("load-extension=C:/KeshriKundanAccess/extension/a11yChromeExtn");
 				options.addArguments("--start-maximized");
 				DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
 				desiredCapabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
