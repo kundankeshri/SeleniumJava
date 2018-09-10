@@ -52,7 +52,7 @@ public class TargetBrowser {
 			}
 
 		   if(chosen == BROWSER.CHROME && checkAccessibility == "ACCESSIBILITY"){
-				 System.out.println("InsideChosen"+chosen);
+				 System.out.println("InsideChosen1"+chosen);
 				System.setProperty("webdriver.chrome.driver",exeLocation);
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("load-extension=C:/KeshriKundanAccess/extension/a11yChromeExtn");
@@ -62,7 +62,7 @@ public class TargetBrowser {
 				desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
 				driver=new ChromeDriver(desiredCapabilities);
 			}else {
-				 System.out.println("InsideChosen"+chosen);
+				 System.out.println("InsideChosen2"+chosen);
 				System.setProperty("webdriver.chrome.driver",exeLocation);
 				ChromeOptions options = new ChromeOptions();
 				//options.addArguments("load-extension=C:/KeshriKundanAccess/extension/a11yChromeExtn");
