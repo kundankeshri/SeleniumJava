@@ -18,10 +18,11 @@ public class TargetBrowser {
 	private String checkAccessibility;
 	protected EventFiringWebDriver eventFiringDriverForA11y;
 	protected A11YCapableWebDriverEventListener a11yListerner;
-	
+
 
 	public TargetBrowser toUse(BROWSER browser , String accessibility){
 		chosen = browser;
+		System.out.println("accessibility"+accessibility);
 		checkAccessibility = accessibility ;
 		return this;
 	}
