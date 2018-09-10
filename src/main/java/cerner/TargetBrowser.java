@@ -31,6 +31,9 @@ public class TargetBrowser {
 		WebDriver driver = null;
 		try {
 
+			System.out.println("chosen"+chosen);
+			System.out.println("checkAccessibility"+checkAccessibility);
+
 			if (chosen == BROWSER.FIREFOX) {
 
 				/*DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -47,6 +50,7 @@ public class TargetBrowser {
 				//driver = new FirefoxDriver(fprofile);
 				driver = new FirefoxDriver();
 			}
+
 		   if(chosen == BROWSER.CHROME && checkAccessibility == "ACCESSIBILITY"){
 				System.setProperty("webdriver.chrome.driver",exeLocation);
 				ChromeOptions options = new ChromeOptions();
