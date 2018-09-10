@@ -51,8 +51,8 @@ public class TargetBrowser {
 				driver = new FirefoxDriver();
 			}
        System.out.println(chosen == BROWSER.CHROME && checkAccessibility == "ACCESSIBILITY");
-		   if(chosen == BROWSER.CHROME && checkAccessibility == "ACCESSIBILITY"){
-				 System.out.println("InsideChosen1"+chosen);
+		   if(chosen == BROWSER.CHROME && checkAccessibility.equals("ACCESSIBILITY")){
+				System.out.println("InsideChosen1"+chosen);
 				System.setProperty("webdriver.chrome.driver",exeLocation);
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("load-extension=C:/KeshriKundanAccess/extension/a11yChromeExtn");
